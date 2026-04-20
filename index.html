@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web App</title>
+    <style>
+        /* ล้างขอบขาวของเบราว์เซอร์และล็อคไม่ให้หน้าเว็บหลักเลื่อน */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; 
+            background-color: #f0f0f0;
+        }
+
+        /* กล่องที่จะเอาไว้ครอบ Iframe */
+        .iframe-container {
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* อะไรที่ล้นกล่องนี้ออกไป จะถูกซ่อน */
+            position: relative;
+        }
+
+        /* ตั้งค่า Iframe ให้เลื่อนขึ้นไปซ่อนแถบด้านบน */
+        .iframe-container iframe {
+            position: absolute;
+            top: -40px; /* ขยับหน้าเว็บขึ้นไป 40px เพื่อซ่อนแถบ Google */
+            left: 0;
+            width: 100%;
+            height: calc(100% + 40px); /* เพิ่มความสูงชดเชยส่วนที่ถูกเลื่อนขึ้นไป */
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="iframe-container">
+        <iframe src="https://script.google.com/macros/s/AKfycbye3q0i7UhynmXElM1qX2nS0M4_TtP9FgK3BD2IXHGZi45UbTFVXMxUnKiiQcbruydIJw/exec"></iframe>
+    </div>
+
+</body>
+</html>
